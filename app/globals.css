@@ -1,26 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Primary Palette (Forest Green) */
+  --color-primary: 54 179 126;  /* Equivalent to #36B37E */
+  --color-primary-dark: 39 140 98; /* Equivalent to #278C62 */
+
+  /* Accent Color (Golden Yellow) */
+  --color-accent: 255 153 0;    /* Equivalent to #FF9900 */
+
+  /* Neutral Colors */
+  --color-foreground: 23 43 77; /* Equivalent to #172B4D - Deep Gray Text */
+  --color-background: 244 245 247; /* Equivalent to #F4F5F7 - Soft Beige Background */
+
+  /* 💡 NEW: Set Tailwind's default ring/border color variables to use our primary color */
+  --tw-ring-color: rgb(var(--color-primary) / 0.5); /* Semi-transparent Forest Green */
+  --tw-ring-offset-color: rgb(var(--color-background)); /* Ring offset (usually background) */
+  --tw-ring-opacity: 1;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
