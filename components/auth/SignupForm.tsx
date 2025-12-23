@@ -48,8 +48,6 @@ const SignupForm: React.FC = () => {
   };
 
   // Define the Forest Green and related colors using the style helper
-  const primaryColor = `rgb(var(--color-primary))`;
-  const primaryDarkColor = `rgb(var(--color-primary-dark))`;
   const foregroundColor = `rgb(var(--color-foreground))`;
 
   return (

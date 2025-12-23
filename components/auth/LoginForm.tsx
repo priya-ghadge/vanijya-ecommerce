@@ -89,7 +89,9 @@ const LoginForm: React.FC = () => {
     </Link>
   </div>
   <input 
-    type="password" 
+    type="password"
+    onChange={(e) => setPassword(e.target.value)}
+    required
     className="
             mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
             focus:outline-none focus:ring-2 focus:ring-opacity-50 
@@ -119,7 +121,7 @@ const LoginForm: React.FC = () => {
 
   {/* Button Text */}
   <span className="relative z-10 flex items-center justify-center gap-2">
-    Log In 
+    {isLoading ? 'Logging in...' : 'Login In'}
     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
     </svg>
