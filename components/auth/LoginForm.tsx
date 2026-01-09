@@ -6,11 +6,14 @@ import React, { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useLocale, useTranslations } from 'next-intl';
 
 const LoginForm: React.FC = () => {
   const { login, isLoading } = useAuth();
   const router = useRouter();
-
+  const t = useTranslations('Login')
+  const locale = useLocale()
+console.log("Current active locale:", locale, t('forgotPassword'))
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -85,7 +88,7 @@ const LoginForm: React.FC = () => {
       className="text-xs font-bold hover:underline"
       style={{ color: primaryColor }}
     >
-      Forgot?
+      {t('forgotPassword')}
     </Link>
   </div>
   <input 
@@ -121,7 +124,7 @@ const LoginForm: React.FC = () => {
 
   {/* Button Text */}
   <span className="relative z-10 flex items-center justify-center gap-2">
-    {isLoading ? 'Logging in...' : 'Login In'}
+    {isLoading ? 'Logging in...' : 'Log In'}
     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
     </svg>

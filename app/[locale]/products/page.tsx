@@ -5,7 +5,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocale } from '@/context/LocaleContext';
 import ProductCard from '@/components/products/ProductCard';
-import LocaleSelector from '../../components/common/LocalSelector';
+import LocaleSelector from '../../../components/common/LocalSelector';
 
 // Define the shape of the data we expect from the API
 interface Product {

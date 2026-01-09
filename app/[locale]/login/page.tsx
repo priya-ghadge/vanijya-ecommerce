@@ -4,9 +4,12 @@ import React from 'react';
 import LoginForm from '@/components/auth/LoginForm';
 import Link from 'next/link';
 import Image from 'next/image';
+import {useTranslations} from 'next-intl'
 
 const LoginPage: React.FC = () => {
   const primaryColor = `rgb(var(--color-primary))`;
+  const t = useTranslations('Login')
+  console.log(t('createAccount'))
 
   // Only using the 4 images that are confirmed working
   const images = [
@@ -65,9 +68,9 @@ const LoginPage: React.FC = () => {
           <div className="mt-8 pt-6 border-t border-gray-100">
             {/* Flex ensures these stay on one line unless the screen is tiny */}
             <div className="flex items-center justify-center gap-2 text-sm">
-              <span className="text-gray-500 whitespace-nowrap">New here?</span>
+              <span className="text-gray-500 whitespace-nowrap">{t('newUser')}</span>
               <Link href="/signup" className="font-bold hover:underline" style={{ color: primaryColor }}>
-                Create an account
+                {t('createAccount')}
               </Link>
             </div>
 
